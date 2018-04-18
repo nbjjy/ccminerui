@@ -26,7 +26,7 @@ namespace ccminer_gui
                 Algorithm.Create("blake2s", "Nevacoin(Blake2-S 256)"),
                 Algorithm.Create("bmw", "Midnight"),
                 Algorithm.Create("cryptolight", "AEON cryptonight(MEM/2)"),
-                Algorithm.Create("cryptonight", "XMR cryptonight"),
+                Algorithm.Create("cryptonight", "XMR cryptonight, Bytecoin, Dash, DigitalNote, etc"),
                 Algorithm.Create("c11/flax", "Chaincoin and Flax"),
                 Algorithm.Create("decred", "Decred 180 bytes Blake256-14"),
                 Algorithm.Create("deep", "Deepcoin"),
@@ -45,16 +45,16 @@ namespace ccminer_gui
                 Algorithm.Create("lyra2", "CryptoCoin"),
                 Algorithm.Create("lyra2v2", "Vertcoin"),
                 Algorithm.Create("lyra2z", "Zerocoin(XZC)"),
-                Algorithm.Create("mjollnir", "Mjollnircoin"),
+                #Algorithm.Create("mjollnir", "Mjollnircoin"),
                 Algorithm.Create("myr-gr", "Myriad-Groest"),
-                Algorithm.Create("neoscrypt", "FeatherCoin"),
+                Algorithm.Create("neoscrypt", "FeatherCoin, Trezarcoin, Orbitcoin, etc"),
                 Algorithm.Create("nist5", "TalkCoin"),
                 Algorithm.Create("penta", "Joincoin / Pentablake"),
                 Algorithm.Create("phi", "LUXCoin"),
                 Algorithm.Create("polytimos", "Polytimos"),
                 Algorithm.Create("quark", "Quarkcoin"),
                 Algorithm.Create("qubit", "Qubit"),
-                Algorithm.Create("scrypt", "Scrypt coins"),
+                Algorithm.Create("scrypt", "Scrypt coins(Litecoin, Dogecoin, etc)"),
                 Algorithm.Create("scrypt:N", "Scrypt-N(:10 for 2048 iterations)"),
                 Algorithm.Create("scrypt-jane", "Chacha coins like Cache and Ultracoin"),
                 Algorithm.Create("s3", "1coin(ONE)"),
@@ -68,9 +68,12 @@ namespace ccminer_gui
                 Algorithm.Create("tribus", "Denarius"),
                 Algorithm.Create("x11evo", "Revolver"),
                 Algorithm.Create("x11", "DarkCoin"),
-                Algorithm.Create("x14", "X14Coin"),
+                Algorithm.Create("x12", "GalaxyCash"),
+                Algorithm.Create("x13", "X13"),
+                Algorithm.Create("x14", "X14"),
                 Algorithm.Create("x15", "Halcyon"),
-                Algorithm.Create("x17", "X17"),
+                Algorithm.Create("x16r", "Raven，Proton"),
+                Algorithm.Create("x16s", "Pigeon and Eden"),
                 Algorithm.Create("x17", "X17"),
                 Algorithm.Create("vanilla", "Vanilla(Blake256)"),
                 Algorithm.Create("veltor", "VeltorCoin"),
@@ -89,10 +92,28 @@ namespace ccminer_gui
         {
             return Algorithm.GetNames(_algorithms);
         }
+        
+        public void Run64(IConfig config)
+        {
+            _minerCli.Open(Path.Combine(Environment.CurrentDirectory, "ccminer-x64.exe"), new string[] {
+                "-N",
+                config.StatsAvg.ToString(),
+                "-i",
+                config.Intensity,
+                "-a",
+                Algorithm.Find(config.Algorithm, _algorithms).Argument,
+                "-o",
+                config.PoolUrl,
+                "-u",
+                config.Username,
+                "-p",
+                config.Password
+            });
+        }
 
         public void Run(IConfig config)
         {
-            _minerCli.Open(Path.Combine(Environment.CurrentDirectory, "ccminer-x64.exe"), new string[] {
+            _minerCli.Open(Path.Combine(Environment.CurrentDirectory, "ccminer.exe"), new string[] {
                 "-N",
                 config.StatsAvg.ToString(),
                 "-i",
