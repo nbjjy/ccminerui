@@ -73,9 +73,3 @@ Some algorithms need extra arguments. I am working on creating a way to pass ext
 
 If you're feeling nice, a small donation to pay for a beer or a cup of coffee would be greatly appreciated.
 
-```
-BTC Donation Address: 1ic2WAQtdckJ5vWBjqgg6PnocnNs2kiqj
-FTC Donation Address: 6zqMHRmL3UsFcuhCkAiff8NPUYDG3s7DbJ
-LTC Donation Address: Le7ZdvageYpqAG834AvjByN7xkJjBVsoLf
-VTC Donation Address: VrDhSAEnEqKMLsA21YZJqSRsRPKwkz4sbr
-```
