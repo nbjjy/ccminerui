@@ -1,14 +1,5 @@
-# ccminer-ui
+# ccminerui
 
-A basic UI for ccminer.
-
-This UI includes support for idle mining. If the box is checked, the UI will only mine when your computer has been idle for more than 2 minutes.
-
-![Alt text](https://shotr.io/OTQG7MtPj.png "Screenshot")
-
-This miner supports what ccminer supports:
-
-```
 bastion     (Joincoin)
 bitcore     (Bitcore's Timetravel10)
 blake       (Saffroncoin (Blake256))
@@ -60,16 +51,10 @@ x11evo      (Revolver)
 x11         (DarkCoin)
 x14         (X14Coin)
 x15         (Halcyon)
-x17         (X17)
+x16         (X16r/x16s)
 x17         (X17)
 vanilla     (Vanilla (Blake256))
 veltor      (VeltorCoin)
 whirlpool   (Joincoin)
 wildkeccak  (Boolberry (Stratum only))
 zr5         (ZiftrCoin)
-```
-
-Some algorithms need extra arguments. I am working on creating a way to pass extra arguments for specific coins to the UI.
-
-If you're feeling nice, a small donation to pay for a beer or a cup of coffee would be greatly appreciated.
-
