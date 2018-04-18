@@ -72,7 +72,7 @@ namespace ccminer_gui
                 Algorithm.Create("x13", "X13"),
                 Algorithm.Create("x14", "X14"),
                 Algorithm.Create("x15", "Halcyon"),
-                Algorithm.Create("x16r", "Raven，Proton"),
+                Algorithm.Create("x16r", "Raven, Proton"),
                 Algorithm.Create("x16s", "Pigeon and Eden"),
                 Algorithm.Create("x17", "X17"),
                 Algorithm.Create("vanilla", "Vanilla(Blake256)"),
