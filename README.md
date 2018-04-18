@@ -1,5 +1,5 @@
 # ccminerui
-
+,,,,,,
 bastion     (Joincoin)
 bitcore     (Bitcore's Timetravel10)
 blake       (Saffroncoin (Blake256))
@@ -58,3 +58,4 @@ veltor      (VeltorCoin)
 whirlpool   (Joincoin)
 wildkeccak  (Boolberry (Stratum only))
 zr5         (ZiftrCoin)
+,,,,,,
