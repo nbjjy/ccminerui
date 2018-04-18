@@ -30,6 +30,26 @@ namespace ccminer_gui
 
         public void Run(IConfig config, string algorithm)
         {
+            Open(Path.Combine(Environment.CurrentDirectory, "ccminer.exe"), new string[] {
+                "-N",
+                config.StatsAvg.ToString(),
+                "-i",
+                config.Intensity,
+                "-a",
+                algorithm,
+                "-o",
+                config.PoolUrl,
+                "-u",
+                config.Username,
+                "-p",
+                config.Password,
+                "--no-color"
+            });
+            OutputDataReceived += MinerCli_OutputDataReceived;
+        }
+
+        public void Run64(IConfig config, string algorithm)
+        {
             Open(Path.Combine(Environment.CurrentDirectory, "ccminer-x64.exe"), new string[] {
                 "-N",
                 config.StatsAvg.ToString(),
